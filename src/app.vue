@@ -1,27 +1,27 @@
 <template>
-  <div id="app">
+<div id="app">
     {{text}}
     <button @click="changeText"></button>
-  </div>
+</div>
 </template>
 <script>
-  export default {
+export default {
     data() {
-      return {
-        text: 'hello world'
-      };
+        return {
+            text: 'hello world'
+        };
     },
     created() {
-      localStorage.setItem('test', 'hello');
-      // window.location.href = 'http://codesky.me';
+        localStorage.setItem('test', 'hello');
+        // window.location.href = 'http://codesky.me';
     },
     methods: {
-      changeText() {
-        this.text = 'test click'
-      }
+        changeText() {
+            this.text = 'test click'
+        }
     },
     mounted() {
-      // window.location.href = 'http://codesky.me';
+        // window.location.href = 'http://codesky.me';
     }
-  };
+};
 </script>

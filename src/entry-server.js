@@ -1,6 +1,6 @@
 import createApp from './index';
 
-export default () => {
-  const { app } = createApp();
-  return app;
+export default() => {
+    const {app} = createApp();
+    return app;
 };
