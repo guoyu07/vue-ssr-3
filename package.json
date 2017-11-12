@@ -4,13 +4,19 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot --config build/webpack.client.conf.js",
+    "server": "node server.js",
+    "build": "rimraf dist && npm run build:client && npm run build:server",
+    "build:client": "cross-env NODE_ENV=production webpack --config build/webpack.client.conf.js --progress --hide-modules",
+    "build:server": "cross-env NODE_ENV=production webpack --config build/webpack.server.conf.js --progress --hide-modules"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "babel-core": "^6.24.1",
     "babel-loader": "^7.0.0",
+    "cross-env": "^5.1.1",
     "css-loader": "^0.28.1",
     "eslint": "^3.19.0",
     "eslint-loader": "^1.7.1",
@@ -25,9 +31,12 @@
     "vue-ssr-webpack-plugin": "^3.0.0",
     "vue-template-compiler": "^2.3.2",
     "webpack": "^2.4.1",
+    "webpack-dev-server": "^2.9.4",
+    "webpack-merge": "^4.1.1",
     "window-mock": "0.0.13"
   },
   "dependencies": {
+    "express": "^4.16.2",
     "fs-extra": "^4.0.2",
     "vue": "^2.3.2",
     "vue-server-renderer": "^2.3.2"

@@ -1,47 +1,57 @@
 {
-  "publicPath": "./",
+  "publicPath": "/dist/",
   "all": [
-    "client-bundle.3b343277f1eef2224608.js",
-    "client-bundle.95b832bccda97bde78ab.js"
+    "build.js",
+    "build.js.map"
   ],
   "initial": [
-    "client-bundle.95b832bccda97bde78ab.js",
-    "client-bundle.3b343277f1eef2224608.js"
+    "build.js"
   ],
   "async": [],
   "modules": {
     "41507008": [
-      0
-    ],
-    "e615a706": [
-      0
+      0,
+      1
     ],
     "8582c8f0": [
-      0
+      0,
+      1
     ],
-    "60d420a0": [
-      0
-    ],
-    "3f293cd4": [
-      0
+    "43a1d656": [
+      0,
+      1
     ],
     "13a7999c": [
-      0
+      0,
+      1
+    ],
+    "886419c0": [
+      0,
+      1
+    ],
+    "e615a706": [
+      0,
+      1
     ],
     "bf404994": [
-      0
+      0,
+      1
     ],
     "1395acf4": [
-      0
+      0,
+      1
     ],
-    "b5aa86d4": [
-      0
+    "22e83f8e": [
+      0,
+      1
     ],
     "16a4279e": [
-      0
+      0,
+      1
     ],
     "96541af0": [
-      0
+      0,
+      1
     ]
   }
 }
