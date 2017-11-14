@@ -28,22 +28,16 @@ const renderToString = function(context) {
     })
 }
 
-app.get('/', function (req, resp) {
+app.get('/', (req, res) => {
     let html = ''
     try {
-        // html = await renderToString({
-        //     title: '第一个 SSR Demo',
-        //     injectData: 'window.__INIT_DATA__ = ' + JSON.stringify({text: '这是服务器注入的数据。'})
-        // })
-        // console.log(html);
-        // resp.send(html)
         renderer.renderToString((err, html) => {
             if (err) {
                 console.log(err.message);
                 console.log(err.stack);
             }
             console.log(html);
-            resp.send(html)
+            res.send(html)
         });
     } catch (err) {
         console.log(err.message);

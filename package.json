@@ -33,12 +33,15 @@
     "webpack": "^2.4.1",
     "webpack-dev-server": "^2.9.4",
     "webpack-merge": "^4.1.1",
+    "webpack-node-externals": "^1.6.0",
     "window-mock": "0.0.13"
   },
   "dependencies": {
     "express": "^4.16.2",
     "fs-extra": "^4.0.2",
     "vue": "^2.3.2",
-    "vue-server-renderer": "^2.3.2"
+    "vue-router": "^3.0.1",
+    "vue-server-renderer": "^2.3.2",
+    "vuex": "^3.0.1"
   }
 }
