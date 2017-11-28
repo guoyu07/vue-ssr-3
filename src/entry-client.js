@@ -1,5 +1,8 @@
-import createApp from './app';
-// 客户端特定引导逻辑……
-const { app } = createApp();
-// 这里假定 App.vue 模板中根元素具有 `id="app"`
+import { app, store } from './app';
+
+// prime the store with server-initialized state.
+// the state is determined during SSR and inlined in the page markup.
+store.replaceState(window.__INITIAL_STATE__); // eslint-disable-line no-underscore-dangle
+
+// actually mount to DOM
 app.$mount('#app');
