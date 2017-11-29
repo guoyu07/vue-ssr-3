@@ -1,3 +1,5 @@
+// 创建根 Vue 实例，并直接挂载到 DOM
+
 import Vue from 'vue'
 import { sync } from 'vuex-router-sync';
 import App from './App.vue'

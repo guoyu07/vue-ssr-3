@@ -21,5 +21,6 @@
 </script>
 
 <style lang="stylus">
-
+    h1
+        font-size: 40px;
 </style>

@@ -38,12 +38,10 @@ module.exports = {
                 }
             }, {
                 test: /\.css$/,
-                use: isProd
-                    ? ExtractTextPlugin.extract({
+                use: isProd ? ExtractTextPlugin.extract({
                         use: 'css-loader?minimize',
                         fallback: 'vue-style-loader'
-                      })
-                    : ['vue-style-loader', 'css-loader']
+                    }) : ['vue-style-loader', 'css-loader']
               }
         ]
     },
@@ -51,8 +49,8 @@ module.exports = {
         maxEntrypointSize: 300000,
         hints: isProd ? 'warning' : false
     },
-    plugins: isProd
-        ? [
+    plugins: isProd ?
+        [
             new webpack.optimize.UglifyJsPlugin({
                 compress: { warnings: false }
             }),
@@ -60,8 +58,7 @@ module.exports = {
             new ExtractTextPlugin({
                 filename: 'common.[chunkhash].css'
             })
-          ]
-        : [
+        ] : [
             new FriendlyErrorsPlugin()
-          ]
+        ]
 }

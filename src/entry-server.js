@@ -1,3 +1,5 @@
+// 执行服务器端路由匹配(server-side route matching)和数据预取逻辑(data pre-fetching logic)
+
 import {app, router, store} from './app';
 
 const isDev = process.env.NODE_ENV !== 'production';
