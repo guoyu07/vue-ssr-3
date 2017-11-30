@@ -3,8 +3,8 @@ const path = require('path')
 const merge = require('webpack-merge')
 const baseConfig = require('./webpack.base.config')
 const vueConfig = require('./vue-loader.config')
-const HTMLPlugin = require('html-webpack-plugin')
-// const VueSSRClientPlugin = require('vue-server-renderer/client-plugin')
+// const HTMLPlugin = require('html-webpack-plugin')
+const VueSSRClientPlugin = require('vue-server-renderer/client-plugin')
 
 const config = merge(baseConfig, {
     entry: {
@@ -35,15 +35,11 @@ const config = merge(baseConfig, {
             name: 'manifest'
         }),
         // generate output HTML
-        new HTMLPlugin({
-            template: 'src/index.template.html'
-        })
-        // new VueSSRClientPlugin()
+        // new HTMLPlugin({
+        //     template: 'src/index.template.html'
+        // })
+        new VueSSRClientPlugin()
     ]
 })
-
-// if (process.env.NODE_ENV === 'production') {
-//
-// }
 
 module.exports = config

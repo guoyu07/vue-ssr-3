@@ -10,11 +10,11 @@
     export default {
         name: 'about',
         data () {
-            return {
+            return { 
 
-            };
-        },
-        computed: {
+            }; 
+        }, 
+        computed: { 
 
         }
     };
