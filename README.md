@@ -16,4 +16,5 @@ $ npm run build
 ## deploy
 
 1、nginx config
+
 2、pm2 start npm -- start
