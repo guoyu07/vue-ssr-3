@@ -89,7 +89,7 @@ function render(req, res) {
     }
 
     const context = {
-        title: 'Vue HN 2.0', // default title
+        title: '搜狐千帆直播 - 搜狐旗下直播平台', // default title
         url: req.url
     }
     renderer.renderToString(context, (err, html) => {

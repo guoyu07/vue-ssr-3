@@ -1,13 +1,16 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from '../views/home.vue';
-import About from '../views/about.vue';
 
 Vue.use(Router);
 
+// route-level code splitting
+const Home = () => import('../views/home.vue')
+const About = () => import('../views/about.vue')
+
 export default new Router({
     mode: 'history',
-    scrollBehavior: () => ({y: 0}),
+    fallback: false,
+    scrollBehavior: () => ({ y: 0 }),
     routes: [
         {
             path: '/',

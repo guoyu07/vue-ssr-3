@@ -22,5 +22,5 @@
 
 <style lang="stylus">
     .about_view
-        background-color: #ccc;
+        background-color #ccc;
 </style>
