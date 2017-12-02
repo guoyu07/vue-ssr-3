@@ -1,7 +1,9 @@
 <template>
     <div class="home_view">
         <div class="container">
-            <h1>home</h1>
+            <h1>the home page</h1>
+            {{text}}
+            <button @click="changeText"></button>
         </div>
     </div>
 </template>
@@ -11,11 +13,19 @@
         name: 'home',
         data () {
             return {
-
+                text: 'this is a vue ssr page'
             };
         },
-        computed: {
-
+        created() {
+            this.init();
+        },
+        methods: {
+            init() {
+                console.log('init data')
+            },
+            changeText() {
+                this.text = 'you had triggered a click'
+            }
         }
     };
 </script>
