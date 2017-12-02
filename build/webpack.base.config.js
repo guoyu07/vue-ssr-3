@@ -11,7 +11,7 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, '../dist/'),
         publicPath: '/dist/',
-        filename: '[name].[chunkhash].js'
+        filename: '[name].[chunkhash:8].js'
     },
     resolve: {
         alias: {
@@ -56,7 +56,7 @@ module.exports = {
             }),
             new webpack.optimize.ModuleConcatenationPlugin(),
             new ExtractTextPlugin({
-                filename: 'common.[chunkhash].css'
+                filename: 'common.[chunkhash:8].css'
             })
         ] : [
             new FriendlyErrorsPlugin()
