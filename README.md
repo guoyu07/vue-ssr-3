@@ -1,6 +1,8 @@
 # vue-ssr 
 
 ## Build Setup
+
+``` bash
 # install dependencies
 $ npm install or yarn install
 
@@ -9,7 +11,9 @@ $ npm run dev
 
 # build
 $ npm run build
+```
 
 ## deploy
+
 1、nginx config
 2、pm2 start npm -- start
