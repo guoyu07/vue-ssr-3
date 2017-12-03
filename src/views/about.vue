@@ -6,21 +6,4 @@
     </div>
 </template>
 
-<script>
-    export default {
-        name: 'about',
-        data () {
-            return { 
-
-            }; 
-        }, 
-        computed: { 
-
-        }
-    };
-</script>
-
-<style lang="stylus">
-    .about_view
-        background-color #ccc;
-</style>
+<style lang="stylus"></style>

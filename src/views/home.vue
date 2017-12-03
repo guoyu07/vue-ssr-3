@@ -4,11 +4,20 @@
             <h1>the home page</h1>
             {{text}}
             <button @click="changeText"></button>
+            <ul>
+                <li v-for="(item, index) in items">
+                    <span>{{ item.title }}: {{ item.description }}</span>
+                </li>
+            </ul>
         </div>
     </div>
 </template>
 
 <script>
+    function fetchItems(store) {
+        return store.dispatch('LOAD_ACTIVE_ITEMS');
+    }
+
     export default {
         name: 'home',
         data () {
@@ -16,13 +25,18 @@
                 text: 'this is a vue ssr page'
             };
         },
-        created() {
-            this.init();
+        computed: { 
+            items() {
+                return this.$store.getters.activeItems;
+            }
+        },
+        // We only fetch the item itself before entering the view, because
+        // it might take a long time to load threads with hundreds of comments
+        // due to how the HN Firebase API works.
+        asyncData({ store }) {
+            return store.dispatch('LOAD_ACTIVE_ITEMS')
         },
         methods: {
-            init() {
-                console.log('init data')
-            },
             changeText() {
                 this.text = 'you had triggered a click'
             }

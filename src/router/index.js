@@ -9,7 +9,6 @@ const About = () => import('../views/about.vue')
 
 export default new Router({
     mode: 'history',
-    fallback: false,
     scrollBehavior: () => ({ y: 0 }),
     routes: [
         {

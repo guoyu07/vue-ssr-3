@@ -24,14 +24,20 @@ router.onReady(() => {
         const activated = matched.filter((c, i) => {
             return diffed || (diffed = (prevMatched[i] !== c))
         })
-        const asyncDataHooks = activated.map(c => c.asyncData).filter(_ => _)
-        if (!asyncDataHooks.length) {
+        // const asyncDataHooks = activated.map(c => c.asyncData).filter(_ => _)
+        if (!activated.length) {
             return next()
         }
         // 这里如果有加载指示器(loading indicator)，就触发
-
+        Promise.all(activated.map(c => {
+            if (c.asyncData) {
+                return c.asyncData({ store, route: to })
+            }
+            })).then(() => {
+            // stop loading indicator
+            next()
+        }).catch(next)
     })
-
     // actually mount to DOM
     app.$mount('#app');
 })
