@@ -18,9 +18,7 @@ module.exports = function setupDevServer(app, templatePath, cb) {
     let clientManifest
 
     let ready
-    const readyPromise = new Promise(r => {
-        ready = r
-    })
+    const readyPromise = new Promise(r => { ready = r })
     const update = () => {
         if (bundle && clientManifest) {
             ready()

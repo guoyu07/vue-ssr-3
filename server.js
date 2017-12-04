@@ -51,12 +51,10 @@ if (isProd) {
 }
 
 const serve = (path, cache) => express.static(resolve(path), {
-    maxAge: cache && isProd
-        ? 1000 * 60 * 60 * 24 * 30
-        : 0
+    maxAge: cache && isProd ? 1000 * 60 * 60 * 24 * 30 : 0
 })
 
-app.use(compression({threshold: 0}))
+app.use(compression({ threshold: 0 }))
 app.use(favicon('./public/logo.png'))
 app.use('/dist', serve('./dist', true))
 app.use('/public', serve('./public', true))
@@ -89,11 +87,31 @@ function render(req, res) {
         }
     }
 
+    // 添加页面标题
+    var title = ''
+    switch (req.url) {
+        case '/':
+            title = '首页 - 正搜狐千帆直播 - 搜狐旗下直播平台'
+            break;
+        case '/about':
+            title = '关于页面'
+            break;
+        default:
+            title = '404'
+    }
+
+    // renderer.renderToStream({ title, url: req.url })
+    //     .on('error', handleError)
+    //     .on('end', () => console.log(`whole request: ${Date.now() - s}ms`))
+    //     .pipe(res)
+
     const context = {
-        title: '搜狐千帆直播 - 搜狐旗下直播平台', // default title
+        title: title, 
         url: req.url
     }
+
     renderer.renderToString(context, (err, html) => {
+        console.log('err:' + err)
         if (err) {
             return handleError(err)
         }

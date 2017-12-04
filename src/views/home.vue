@@ -30,9 +30,6 @@
                 return this.$store.getters.activeItems;
             }
         },
-        // We only fetch the item itself before entering the view, because
-        // it might take a long time to load threads with hundreds of comments
-        // due to how the HN Firebase API works.
         asyncData({ store }) {
             return store.dispatch('LOAD_ACTIVE_ITEMS')
         },

@@ -34,12 +34,9 @@ export default(context) => {
             // A preFetch hook dispatches a store action and returns a Promise,
             // which is resolved when the action is complete and store state has been
             // updated.
-            Promise.all(matchedComponents.map(Component => {
-                if (Component.asyncData) {
-                    return Component.asyncData({
-                        store,
-                        route: router.currentRoute
-                    })
+            Promise.all(matchedComponents.map(component => {
+                if (component.asyncData) {
+                    return component.asyncData({ store, route: router.currentRoute })
                 }
             })).then(() => {
                 isDev && console.log(`data pre-fetch: ${Date.now() - s}ms`)
