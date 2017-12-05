@@ -37,6 +37,7 @@
     "vue-style-loader": "^3.0.3",
     "vue-template-compiler": "^2.5.3",
     "webpack": "^3.6.0",
+    "webpack-dev-middleware": "^1.12.2",
     "webpack-dev-server": "^2.9.4",
     "webpack-hot-middleware": "^2.21.0",
     "webpack-merge": "^4.1.1",
@@ -45,6 +46,7 @@
   "dependencies": {
     "express": "^4.16.2",
     "fs-extra": "^4.0.2",
+    "i": "^0.3.6",
     "serialize-javascript": "^1.4.0",
     "vue": "^2.5.3",
     "vue-router": "^3.0.1",
