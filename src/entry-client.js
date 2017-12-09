@@ -1,4 +1,10 @@
-// 客户端 entry 只需创建应用程序，并且将其挂载到 DOM 中
+/*
+* @Author: leo
+* @Date: 2017-12-09 21:50:00
+* @Last Modified by: leo
+* @Last Modified time: 2017-12-09 21:50:00
+* @introduction 客户端 entry 只需创建应用程序，并且将其挂载到 DOM 中
+*/
 
 import 'es6-promise/auto'
 import { app, router, store } from './app';

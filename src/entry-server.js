@@ -1,4 +1,10 @@
-// 执行服务器端路由匹配(server-side route matching)和数据预取逻辑(data pre-fetching logic)
+/*
+* @Author: leo
+* @Date: 2017-12-09 21:50:00
+* @Last Modified by: leo
+* @Last Modified time: 2017-12-09 21:50:00
+* @introduction 执行服务器端路由匹配(server-side route matching)和数据预取逻辑(data pre-fetching logic)
+*/
 
 import {app, router, store} from './app';
 

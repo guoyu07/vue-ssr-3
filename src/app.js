@@ -1,4 +1,10 @@
-// 创建根 Vue 实例，并直接挂载到 DOM
+/*
+* @Author: leo
+* @Date: 2017-12-09 21:50:00
+* @Last Modified by: leo
+* @Last Modified time: 2017-12-09 21:50:00
+* @introduction 创建根 Vue 实例，并直接挂载到 DOM
+*/
 
 import Vue from 'vue'
 import { sync } from 'vuex-router-sync';
