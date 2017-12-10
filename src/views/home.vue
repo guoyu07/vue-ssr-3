@@ -6,7 +6,7 @@
             <button @click="changeText"></button>
             <ul>
                 <li v-for="(item, index) in items">
-                    <span>{{ item.title }}: {{ item.description }}</span>
+                    <span>{{ item.uid }}: {{ item.name }}</span>
                 </li>
             </ul>
         </div>
@@ -14,9 +14,9 @@
 </template>
 
 <script>
-    function fetchItems(store) {
-        return store.dispatch('LOAD_ACTIVE_ITEMS');
-    }
+    // function fetchItems(store) {
+    //     return store.dispatch('LOAD_ACTIVE_ITEMS');
+    // }
 
     export default {
         name: 'home',

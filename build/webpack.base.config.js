@@ -6,6 +6,11 @@ const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
 
 const isProd = process.env.NODE_ENV === 'production'
 
+// 拼接我们的工作区路径为一个绝对路径
+function resolve(dir) {
+    return path.join(__dirname, '..', dir);
+}
+
 module.exports = {
     devtool: isProd ? false : '#cheap-module-source-map',
     output: {
@@ -15,7 +20,8 @@ module.exports = {
     },
     resolve: {
         alias: {
-            'public': path.resolve(__dirname, '../public')
+            'public': path.resolve(__dirname, '../public'),
+            'services': resolve('src/services')
         }
     },
     module: {
