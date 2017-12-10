@@ -12,8 +12,8 @@ import Router from 'vue-router'
 Vue.use(Router);
 
 // route-level code splitting
-const Home = () => import('../views/home.vue')
-const About = () => import('../views/about.vue')
+const Home = () => import('../views/home')
+const About = () => import('../views/about')
 
 export default new Router({
     mode: 'history',

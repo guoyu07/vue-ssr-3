@@ -74,15 +74,15 @@ app.use('/service-worker.js', serve('./dist/service-worker.js'))
  * 代理跨域配置
  * @type {{target: string, changeOrigin: boolean, pathRewrite: {^/api: string}}}
  */
-// let options = {
-//     target: 'http://qf.56.com',    // target host
-//     changeOrigin: true,            // needed for virtual hosted sites
-//     pathRewrite: {
-//       '^/api': ''
-//     }
-// };
-// let exampleProxy = proxy(options);
-// app.use('/api', exampleProxy);
+let options = {
+    target: 'http://qf.56.com',    // target host
+    changeOrigin: true,            // needed for virtual hosted sites
+    pathRewrite: {
+      '^/api': ''
+    }
+};
+let exampleProxy = proxy(options);
+app.use('/api', exampleProxy);
 
 // since this app has no user-specific content, every page is micro-cacheable.
 // if your app involves user-specific content, you need to implement custom

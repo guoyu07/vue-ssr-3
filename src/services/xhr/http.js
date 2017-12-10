@@ -9,7 +9,7 @@ import axios from 'axios';
 import { commonSuccessHandler, commonErrorHandler } from './commonHandler';
 
 let instance = axios.create({
-    baseURL: 'https://qf.56.com/',
+    baseURL: 'https://qf.56.com',
     timeout: 10000,
 });
 
