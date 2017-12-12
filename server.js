@@ -15,7 +15,7 @@ const compression = require('compression')
 const microcache = require('route-cache')
 const resolve = file => path.resolve(__dirname, file)
 const {createBundleRenderer} = require('vue-server-renderer')
-const proxy = require('http-proxy-middleware')
+const proxyMiddleware = require('http-proxy-middleware')
 
 const isProd = process.env.NODE_ENV === 'production'
 const useMicroCache = process.env.MICRO_CACHE !== 'false'
@@ -67,22 +67,22 @@ app.use(compression({ threshold: 0 }))
 app.use(favicon('./public/logo.png'))
 app.use('/dist', serve('./dist', true))
 app.use('/public', serve('./public', true))
-app.use('/service-worker.js', serve('./dist/service-worker.js'))
+// app.use('/service-worker.js', serve('./dist/service-worker.js'))
 
 /**
  * proxy middleware options
  * 代理跨域配置
- * @type {{target: string, changeOrigin: boolean, pathRewrite: {^/api: string}}}
  */
-let options = {
-    target: 'http://qf.56.com',    // target host
-    changeOrigin: true,            // needed for virtual hosted sites
-    pathRewrite: {
-      '^/api': ''
-    }
-};
-let exampleProxy = proxy(options);
-app.use('/api', exampleProxy);
+// let proxyTable = {
+//     target: 'https://qf.56.com',
+//     changeOrigin: true,
+//     logLevel: 'debug',
+//     pathRewrite: {
+//         '^/api': ''
+//     }
+// };
+// let apiProxy = proxyMiddleware(proxyTable);
+// app.use('/api', apiProxy);
 
 // since this app has no user-specific content, every page is micro-cacheable.
 // if your app involves user-specific content, you need to implement custom

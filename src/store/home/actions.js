@@ -12,34 +12,10 @@ export const actions = {
     LOAD_ACTIVE_ITEMS(context) {
         const {commit} = context;
 
-        HomeService.getAnchorList().then(function (response) {
+        HomeService.getAnchorList({ index: 0, size: 12, type: 0 }).then(function (response) {
             let collection = response.message.anchors;
             
             commit('SET_ACTIVE_ITEMS', collection);
         });
-
-        // mock API response
-        // const collection = [
-        //     {
-        //         title: 'Item 1',
-        //         description: 'Description for item 1'
-        //     }, {
-        //         title: 'Item 2',
-        //         description: 'Description for item 2'
-        //     }, {
-        //         title: 'Item 3',
-        //         description: 'Description for item 3'
-        //     }, {
-        //         title: 'Item 4',
-        //         description: 'Description for item 4'
-        //     }, {
-        //         title: 'Item 5',
-        //         description: 'Description for item 5'
-        //     }
-        // ];
-
-        // commit('SET_ACTIVE_ITEMS', collection);
-
-        // return collection;
     }
 }

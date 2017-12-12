@@ -9,24 +9,17 @@ import axios from 'axios';
 import { commonSuccessHandler, commonErrorHandler } from './commonHandler';
 
 let instance = axios.create({
-    baseURL: 'https://qf.56.com',
-    timeout: 10000,
+    baseURL: 'http://qf.56.com',
+    timeout: 10000
 });
 
 var xhr = ({ method = 'get', url, params = null }) => {
     switch (method) {
         case 'get':
-            return instance[method](url, {
-                params: params
-            }).then(commonSuccessHandler)
-            .catch(commonErrorHandler);
-        case 'post':
-            return instance[method](url, params)
+            return instance[method](url, { params: params })
                 .then(commonSuccessHandler)
                 .catch(commonErrorHandler);
-        case 'delete':
-        case 'put':
-        case 'head':
+        case 'post':
             return instance[method](url, params)
                 .then(commonSuccessHandler)
                 .catch(commonErrorHandler);

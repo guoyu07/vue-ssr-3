@@ -16,6 +16,17 @@ import store from './store';
 // this registers `store.state.route`
 sync(store, router);
 
+// Vue.mixin({
+//     beforeMount () {
+//         const { asyncData } = this.$options
+//         if (asyncData) {
+//             this.dataPromise = asyncData({
+//                 store: this.$store
+//             })
+//         }
+//     }
+// })
+
 // create the app instance.
 // here we inject the router and store to all child components,
 // making them available everywhere as `this.$router` and `this.$store`.

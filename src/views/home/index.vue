@@ -25,6 +25,9 @@
                 text: 'this is a vue ssr page'
             };
         },
+        mounted () {
+            this.$store.dispatch('LOAD_ACTIVE_ITEMS')
+        },
         computed: { 
             items() {
                 return this.$store.getters.activeItems;

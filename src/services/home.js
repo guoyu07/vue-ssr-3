@@ -18,7 +18,8 @@ class HomeService {
     getAnchorList (params) {
         return xhr({
             method: 'get',
-            url: '/home/v4/moreAnchor.h5?index=0&size=12&type=0'
+            url: '/home/v4/moreAnchor.h5',
+            params: params
         });
     }
 }
