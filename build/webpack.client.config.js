@@ -10,6 +10,11 @@ const config = merge(baseConfig, {
     entry: {
         app: './src/entry-client.js'
     },
+    resolve: {
+        alias: {
+            'create-api': './create-api-client.js'
+        }
+    },
     plugins: [
         // strip comments in Vue code
         new webpack.DefinePlugin({
