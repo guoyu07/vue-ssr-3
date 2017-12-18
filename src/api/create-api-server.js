@@ -8,7 +8,7 @@
 const isProd = process.env.NODE_ENV === 'production';
 
 const axios = require('axios');
-let host = isProd ? 'https://qf.56.com' : 'https://qf.56.com';
+let host = isProd ? 'http://qf.56.com' : 'http://qf.56.com';
 let cook = process.__COOKIE__ || '';
 let api;
 

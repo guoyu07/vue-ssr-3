@@ -73,16 +73,16 @@ app.use('/public', serve('./public', true))
  * proxy middleware options
  * 代理跨域配置
  */
-// let proxyTable = {
-//     target: 'https://qf.56.com',
-//     changeOrigin: true,
-//     logLevel: 'debug',
-//     pathRewrite: {
-//         '^/api': ''
-//     }
-// };
-// let apiProxy = proxyMiddleware(proxyTable);
-// app.use('/api', apiProxy);
+let proxyTable = {
+    target: 'http://qf.56.com',
+    changeOrigin: true,
+    logLevel: 'debug',
+    pathRewrite: {
+        '^/api': ''
+    }
+};
+let apiProxy = proxyMiddleware(proxyTable);
+app.use('/api', apiProxy);
 
 // since this app has no user-specific content, every page is micro-cacheable.
 // if your app involves user-specific content, you need to implement custom

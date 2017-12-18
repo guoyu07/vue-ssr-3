@@ -6,3 +6,19 @@
 */
 
 import createApi from 'create-api';
+import { commonSuccessHandler, commonErrorHandler } from './commonHandler';
+
+var api = ({ method = 'get', url, params = null }) => {
+    switch (method) {
+        case 'get':
+            return createApi.get(url, { params: params })
+                .then(commonSuccessHandler)
+                .catch(commonErrorHandler);
+        case 'post':
+            return createApi.post(url, params)
+                .then(commonSuccessHandler)
+                .catch(commonErrorHandler);
+    }
+};
+
+export default api;

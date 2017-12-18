@@ -5,7 +5,8 @@
 * @Last Modified time: 2017-12-10 16:55:00
 */
 
-import xhr from './xhr';
+// import api from './xhr';
+import api from '../api';
 
 /**
  * 首页所用到的http service
@@ -16,7 +17,7 @@ class HomeService {
      * @return {Promise}
      */
     getAnchorList (params) {
-        return xhr({
+        return api({
             method: 'get',
             url: '/home/v4/moreAnchor.h5',
             params: params

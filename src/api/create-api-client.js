@@ -5,9 +5,12 @@
 * @Last Modified time: 2017-12-11 16:55:00
 */
 
+const isProd = process.env.NODE_ENV === 'production';
 const axios = require('axios');
+let host = isProd ? 'http://qf.56.com' : '/api';
 let api;
 
+axios.defaults.baseURL = host;
 axios.defaults.timeout = 10000;
 
 axios.interceptors.response.use((res) => {
@@ -28,12 +31,12 @@ if (process.__API__) {
 } else {
     api = {
         get: function (target, params = {}) {
-            const suffix = Object.keys(params).map(name => {
-                return `${name}=${JSON.stringify(params[name])}`;
-            }).join('&');
-            const urls = `${target}?${suffix}`;
+            // const suffix = Object.keys(params).map(name => {
+            //     return `${name}=${JSON.stringify(params[name])}`;
+            // }).join('&');
+            // const urls = `${target}?${suffix}`;
             return new Promise((resolve, reject) => {
-                axios.get(urls, params).then(res => {
+                axios.get(target, params).then(res => {
                     resolve(res.data);
                 }).catch((error) => {
                     reject(error);
